@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Desafio Forlogic</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="./public/css/app.css">
+</head>
+
+<body>
+
+    <!-- Menu principal-->
+    <header class="cabecalho">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">Navbar</a>
+        </nav>
+    </header>
+
+
+    <!-- Cadastro de clientes -->
+    <section class="cliente">
+        <h2 style="text-align: center">Cadastro de Clientes</h2>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm">
+                    <div id="cliente-form">
+                        <form action="#" method="POST" id="formulario-contato">
+                            <div class="form-group">
+                                <label for="cliente-nome">Nome</label>
+                                <input type="text" class="form-control" id="cliente-nome" placeholder="Digite o nome do cliente" required autofocus>
+                            </div>
+                            <div class="form-group">
+                                <label for="nome-contato">Responsavel</label>
+                                <input type="text" class="form-control" id="nome-contato" placeholder="Digite o nome do responsavel" required autofocus>
+                            </div>
+                            <div class="form-group">
+                                <label for="cliente-data">Data</label>
+                                <input type="date" class="form-control" id="cliente-data" placeholder="Digite a data que se tornou cliente" required autofocus>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </form>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Cadastro de avaliações -->
+    <section class="avaliacoes">
+        <h2 style="text-align: center">Cadastro de Avaliações</h2>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm">
+                    <div id="avaliacoes-form">
+                        <form action="#" method="POST" id="formulario-contato">
+                            <div class="form-group">
+                                <label for="mes-avaliacao">Data de Avaliação</label>
+                                <input type="date" class="form-control" id="mes-avaliacao" required autofocus>
+                            </div>
+                            <div class="form-group">
+                                <label for="select-client">Selecionar Clientes</label>
+                                <select id="select-client" class="form-control" name="select" size="5" multiple required>
+                                </select>
+                            </div>
+
+
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </form>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <script type="module" src="./app/App.js"></script>
+    <script type="module">
+        import { App } from "./app/App.js";
+        var app = new App();
+    </script>
+</body>
+
+</html>

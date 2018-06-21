@@ -1,0 +1,25 @@
+body{
+    background-color: aliceblue
+}
+.cliente{
+    padding: 5px;
+}
+
+.avaliacoes{
+    width: 50%;
+    margin: auto;
+    padding: 10px;
+}
+
+.resultados-avaliacoes{
+    background-color: darkcyan;
+    text-align: center;
+}
+
+#cliente-form{
+    width: 50%;
+    margin: auto;
+    padding: 10px;
+}
+
+#avaliacoes-form{}
