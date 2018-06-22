@@ -1,4 +1,5 @@
 import { Avaliacao } from './../models/Avaliacao.js'
+import { cleanAvaliacaoForm } from './../helpers/genericalHelper.js'
 
 export class AvaliacoesController {
   getAvaliacaoByForm () {
@@ -10,7 +11,7 @@ export class AvaliacoesController {
 
       let a = new Avaliacao(dataAvaliacao, notaAvaliacao, feedback, clienteAvaliador)
       this.sendAvaliacaoToAPI(a)
-      
+
       console.log(clienteAvaliador)
 
       event.preventDefault()
@@ -31,12 +32,19 @@ export class AvaliacoesController {
         'clienteAvaliador': a.clienteAvaliador
       })
     }).then((response) => {
-      console.log(response)
+      if (response.ok) {
+        toastr.success('Avaliação cadastrada com sucesso!')
+        cleanAvaliacaoForm()
+      } else {
+        Promise.reject(response.statusText)
+        toastr.error('Não foi possivel cadastrar avaliação')
+      }
     })
+      .catch(console.log())
   }
 
   getSelectedUser () {
     let e = document.getElementById('select-client')
-    return e.options[ e.selectedIndex ]
+    return e.options[e.selectedIndex]
   }
 }

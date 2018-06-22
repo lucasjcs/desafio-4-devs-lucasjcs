@@ -1,6 +1,7 @@
 import { ClientesController } from './controllers/ClientesController.js'
 import { AvaliacoesController } from './controllers/AvaliacoesController.js'
-import { desableAllHTMLSections } from './helpers/hide-sections-helper.js'
+import { desableAllHTMLSections } from './helpers/genericalHelper.js'
+import renderTable from './views/tableView.js'
 import renderSelect from './views/selectView.js'
 
 export const app = () => {
@@ -18,9 +19,18 @@ export const app = () => {
     desableAllHTMLSections()
     $('.avaliacoes').css('display', 'block')
   })
+
+  $('#menu-clientes-home').click(() => {
+    desableAllHTMLSections()
+    $('.lista-clientes').css('display', 'block')
+  })
+
+  
 }
 
 export const aval = () => {
   let av = new AvaliacoesController()
   av.getAvaliacaoByForm()
+  renderTable()
+
 }

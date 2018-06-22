@@ -1,4 +1,5 @@
 import { Cliente } from './../models/Cliente.js'
+import { cleanClientesForm } from './../helpers/genericalHelper.js'
 /**
  * esta classe é responsavel por controlar tudo o que diz
  * respeito ao cliente e sua interação com a API
@@ -31,7 +32,13 @@ export class ClientesController {
         'data_cad': c.dataCad
       })
     }).then((response) => {
-      console.log(response)
+      if (response.ok) {
+        toastr.success('Cliente cadastrado com sucesso!')
+        cleanClientesForm()
+      } else {
+        toastr.error('Não foi possivel cadastrar cliente')
+        Promise.reject(response.statusText)
+      }
     })
   }
 

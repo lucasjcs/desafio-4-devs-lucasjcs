@@ -1,38 +1,64 @@
 body{
-    background-color: aliceblue
+    background-color: #32383e;
+    color: white
 }
 
 header{
-    background-color: #2c2c2c;
+    background-color: #1e2528;
     color: white;
     text-align: center;
 }
 
+h2{
+    padding: 20px
+}
+
+
+table{
+    border-radius: 10px;
+}
+
+.lista-clientes{
+    width: 80%;
+    margin: auto;
+    padding-top: 50px;
+}
    
 .cliente{
-    padding: 5px;
     
+    padding: 5px;
+    padding-top: 50px;   
 }
 
 .avaliacoes{
     width: 50%;
     margin: auto;
     padding: 10px;
+    padding-top: 50px;
     
 }
 
 .resultados-avaliacoes{
     background-color: darkcyan;
     text-align: center;
+    padding-top: 50px;
 }
 
 #cliente-form{
     width: 50%;
     margin: auto;
-    padding: 10px;
+    padding: 40px;
+    background-color: #1e2528;
+    border-radius: 10px;
 }
 
-#avaliacoes-form{}
+#avaliacoes-form{
+    padding: 40px;
+    background-color: #1e2528;
+    border-radius: 10px;
+}
+
+
 
 
 nav a{
@@ -42,4 +68,8 @@ nav a{
 
 .cabecalho a:hover{
     background-color: #400080
+}
+
+.trash-icon{
+   color: red
 }
