@@ -14,9 +14,12 @@
 <body>
 
     <!-- Menu principal-->
-    <header class="cabecalho">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">Navbar</a>
+    <header class="cabecalho" >
+        <nav class="navbar navbar-expand-lg">
+            <a id="menu-clientes-home" class="nav-item nav-link">Home</a>
+            <a id="menu-avalacoes-home" class="nav-item nav-link">Avaliações</a>
+            <a id="menu-cad-clientes" class="nav-item nav-link">Cadastrar Clientes</a>
+            <a id="menu-cad-avaliacoes" class="nav-item nav-link">Cadastrar Avaliação</a>
         </nav>
     </header>
 
@@ -52,7 +55,7 @@
         </div>
 
     </section>
-
+    
     <!-- Cadastro de avaliações -->
     <section class="avaliacoes">
         <h2 style="text-align: center">Cadastro de Avaliações</h2>
@@ -66,13 +69,22 @@
                                 <input type="date" class="form-control" id="mes-avaliacao" required autofocus>
                             </div>
                             <div class="form-group">
-                                <label for="select-client">Selecionar Clientes</label>
-                                <select id="select-client" class="form-control" name="select" size="5" multiple required>
+                                <label for="select-client">Avaliador</label>
+                                <select id="select-client" class="form-control" name="select" size="5" required>
                                 </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="nota-avaliacao">Informe uma nota de 0 a 9</label>
+                                <input type="number" class="form-control" id="nota-avaliacao" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="feedback-avaliacao">Envie-nos um feedback</label>
+                                <input type="text" class="form-control" id="feedback-avaliacao" required>
                             </div>
 
 
-                            <button type="submit" class="btn btn-primary">Submit</button>
+
+                            <button type="submit" class="btn btn-primary">Cadastrar Avaliação</button>
                         </form>
                     </div>
 
@@ -84,10 +96,12 @@
     </section>
 
 
-    <script type="module" src="./app/App.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="module" src="./app/app.js"></script>
     <script type="module">
-        import { App } from "./app/App.js";
-        var app = new App();
+        import { app, aval } from "./app/app.js";
+        app()
+        aval()
     </script>
 </body>
 

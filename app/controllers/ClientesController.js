@@ -45,12 +45,4 @@ export class ClientesController {
     return res
   }
 
-  getSelectedUser () {
-    let e = document.getElementById('select-client')
-
-    e.addEventListener('click', () => {
-      let value = e.options[ e.selectedIndex ]
-      console.log(value)
-    })
-  }
 }
