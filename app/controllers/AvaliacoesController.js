@@ -43,8 +43,12 @@ export class AvaliacoesController {
       .catch(console.log())
   }
 
-  getSelectedUser () {
-    let e = document.getElementById('select-client')
-    return e.options[e.selectedIndex]
+  getAllAvaliacoesByAPI () {
+    let res = fetch('http://desafio4devs.forlogic.net/api/evaluations/', {
+      headers: new Headers({
+        'Authorization': 'desafio-4-devs-ed245'
+      })
+    })
+    return res
   }
 }

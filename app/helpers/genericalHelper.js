@@ -5,6 +5,7 @@ export const desableAllHTMLSections = () => {
   $('.cliente').css('display', 'none')
   $('.avaliacoes').css('display', 'none')
   $('.lista-clientes').css('display', 'none')
+  $('.lista-avaliacoes').css('display', 'none')
 
 }
 

@@ -6,12 +6,12 @@ import { ClientesController } from './../controllers/ClientesController.js'
 const jsonToClientes = (json) => Object.keys(json).map((id, indice) => ({ 'id': id, ...json[id] }))
 const clientesToTrHTML = (clientes) => clientes
   .map(cliente => `
-                <tr>
-                    <th scope="row" id ="${cliente.id}" >${cliente.id}</th>
+                <tr id ="${cliente.id}" >
+                    <th scope="row">${cliente.id}</th>
                     <td>${cliente.nome}</td>
                     <td>${cliente.data_cad}</td>
                     <td>${cliente.nome_responsavel}</td>
-                    <td class="trash-icon" >X</td>
+                    <td class="trash-icon" name="${cliente.id}">X</td>
                 </tr>
        `)
 
@@ -26,5 +26,6 @@ const renderTable = () => {
       document.getElementById('toRender').innerHTML = tr.replace(/,/gi, '')
     })
     .catch(console.log)
+
 }
 export default renderTable

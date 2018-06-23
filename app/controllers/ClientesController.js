@@ -5,7 +5,7 @@ import { cleanClientesForm } from './../helpers/genericalHelper.js'
  * respeito ao cliente e sua interação com a API
  */
 export class ClientesController {
-  getClientByForm () {
+  getClientByForm() {
     document.getElementById('formulario-contato').addEventListener('submit', event => {
       let nome = document.getElementById('cliente-nome').value
       let responsavel = document.getElementById('nome-contato').value
@@ -19,7 +19,7 @@ export class ClientesController {
     })
   }
 
-  sendClientToAPI (c) {
+  sendClientToAPI(c) {
     fetch('http://desafio4devs.forlogic.net/api/customers/', {
       method: 'post',
       headers: new Headers({
@@ -52,4 +52,13 @@ export class ClientesController {
     return res
   }
 
+  deleteClientById (id) {
+    let res = fetch('http://desafio4devs.forlogic.net/api/customers/' + id, {
+      method: 'delete',
+      headers: new Headers({
+        'Authorization': 'desafio-4-devs-ed245'
+      })
+    })
+    return res
+  }
 }

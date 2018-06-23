@@ -38,10 +38,12 @@ table{
     
 }
 
-.resultados-avaliacoes{
-    background-color: darkcyan;
-    text-align: center;
+.lista-avaliacoes{
+    width: 50%;
+    margin: auto;
+    padding: 10px;
     padding-top: 50px;
+    
 }
 
 #cliente-form{
@@ -71,5 +73,5 @@ nav a{
 }
 
 .trash-icon{
-   color: red
+   color: red;
 }
