@@ -65,7 +65,7 @@
                         <form action="#" method="POST" id="formulario-busca-avaliacoes">
                             <div class="form-group">
                                 <label for="mes-avaliacao-busca">Data de Avaliação</label>
-                                <input type="date" class="form-control" id="mes-avaliacao-busca" autofocus>
+                                <input disabled type="date" class="form-control" id="mes-avaliacao-busca" autofocus>
                             </div>
 
                             <button disabled class="btn btn-primary" id="av-buscar-data">Buscar por Data</button>
@@ -139,7 +139,7 @@
             <div class="row">
                 <div class="col-sm">
                     <div id="avaliacoes-form">
-                        <form action="#" method="POST" id="formulario-contato">
+                        <form action="#" method="POST" id="formulario-aval">
                             <div class="form-group">
                                 <label for="mes-avaliacao">Data de Avaliação</label>
                                 <input type="date" class="form-control" id="mes-avaliacao" required autofocus>
@@ -151,7 +151,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="nota-avaliacao">Informe uma nota de 0 a 9</label>
-                                <input type="number" class="form-control" id="nota-avaliacao" required>
+                                <input type="number" min="0" max="9" class="form-control" id="nota-avaliacao" required>
                             </div>
                             <div class="form-group">
                                 <label for="feedback-avaliacao">Envie-nos um feedback</label>

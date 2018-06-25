@@ -5,6 +5,12 @@ import findClient from './../helpers/findClientsHelper.js'
  * também é realizada a renderização destes dados no elemento Tbody da tabela no HTML
  */
 const jsonToAvaliacoes = (json) => Object.keys(json).map((id, indice) => ({ 'id': id, ...json[id] }))
+/**
+ * Aqui é realizada uma busca em avaliações e também em clientes
+ * como se fosse um 'join' em sql, a fim de retornar o nome do cliente avaliador
+ * que no caso, avaliação contém apenas o id deste avaliador.
+ * Esta renderização de avaliações pode ser um pouco lenta
+ */
 const avaliacoesToHTML = (avaliacoes) => avaliacoes
   .map(avaliacao => { 
     let finder = findClient(avaliacao.clienteAvaliador)
@@ -33,6 +39,7 @@ const avaliacoesToHTML = (avaliacoes) => avaliacoes
 
 const renderTableAval = () => {
   let con = new AvaliacoesController()
+  
   con.getAllAvaliacoesByAPI()
     .then(res => res.json())
     .then(jsonToAvaliacoes)

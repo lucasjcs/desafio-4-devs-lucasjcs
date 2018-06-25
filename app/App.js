@@ -36,14 +36,13 @@ export const app = () => {
     })
   })
   $('#av-buscar-todos').click(e => {
+    toastr.info('Buscando avaliações. Aguarde!')
     renderTableAval()
     e.preventDefault()
   })
-
 }
 
 export const aval = () => {
   let av = new AvaliacoesController()
   av.getAvaliacaoByForm()
-  renderTable()
 }

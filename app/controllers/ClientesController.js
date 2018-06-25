@@ -1,11 +1,13 @@
 import { Cliente } from './../models/Cliente.js'
 import { cleanClientesForm } from './../helpers/genericalHelper.js'
+import renderTable from './../views/tableClientView.js'
+import renderSelect from './../views/selectClientView.js'
 /**
  * esta classe é responsavel por controlar tudo o que diz
  * respeito ao cliente e sua interação com a API
  */
 export class ClientesController {
-  getClientByForm() {
+  getClientByForm () {
     document.getElementById('formulario-contato').addEventListener('submit', event => {
       let nome = document.getElementById('cliente-nome').value
       let responsavel = document.getElementById('nome-contato').value
@@ -19,7 +21,7 @@ export class ClientesController {
     })
   }
 
-  sendClientToAPI(c) {
+  sendClientToAPI (c) {
     fetch('http://desafio4devs.forlogic.net/api/customers/', {
       method: 'post',
       headers: new Headers({
@@ -34,6 +36,8 @@ export class ClientesController {
     }).then((response) => {
       if (response.ok) {
         toastr.success('Cliente cadastrado com sucesso!')
+        renderTable()
+        renderSelect()
         cleanClientesForm()
       } else {
         toastr.error('Não foi possivel cadastrar cliente')

@@ -20,3 +20,4 @@ export const cleanClientesForm = () => {
   $('#nome-contato').val('')
   $('#cliente-data').val('')
 }
+

@@ -1,4 +1,3 @@
-import { AvaliacoesController } from './../controllers/AvaliacoesController.js'
 import { ClientesController } from './../controllers/ClientesController.js'
 
 const jsonToClientes = (json) => Object.keys(json).map((id, indice) => ({ 'id': id, ...json[id] }))

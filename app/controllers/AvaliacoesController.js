@@ -2,8 +2,9 @@ import { Avaliacao } from './../models/Avaliacao.js'
 import { cleanAvaliacaoForm } from './../helpers/genericalHelper.js'
 
 export class AvaliacoesController {
-  getAvaliacaoByForm () {
-    document.getElementById('avaliacoes-form').addEventListener('submit', event => {
+  getAvaliacaoByForm() {
+    document.getElementById('formulario-aval').addEventListener('submit', event => {
+
       let dataAvaliacao = new Date(document.getElementById('mes-avaliacao').value)
       let notaAvaliacao = document.getElementById('nota-avaliacao').value
       let clienteAvaliador = this.getSelectedUser().value
@@ -12,13 +13,12 @@ export class AvaliacoesController {
       let a = new Avaliacao(dataAvaliacao, notaAvaliacao, feedback, clienteAvaliador)
       this.sendAvaliacaoToAPI(a)
 
-      console.log(clienteAvaliador)
 
       event.preventDefault()
     })
   }
 
-  sendAvaliacaoToAPI (a) {
+  sendAvaliacaoToAPI(a) {
     fetch('http://desafio4devs.forlogic.net/api/evaluations', {
       method: 'post',
       headers: new Headers({
@@ -50,5 +50,20 @@ export class AvaliacoesController {
       })
     })
     return res
+  }
+
+  deleteAvaliacaoById (id) {
+    let res = fetch('http://desafio4devs.forlogic.net/api/evaluations/' + id, {
+      method: 'delete',
+      headers: new Headers({
+        'Authorization': 'desafio-4-devs-ed245'
+      })
+    })
+    return res
+  }
+
+  getSelectedUser () {
+    let e = document.getElementById('select-client')
+    return e.options[e.selectedIndex]
   }
 }
