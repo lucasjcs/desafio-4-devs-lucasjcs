@@ -4,13 +4,14 @@ import { desableAllHTMLSections } from './helpers/genericalHelper.js'
 import renderTable from './views/tableClientView.js'
 import renderSelect from './views/selectClientView.js'
 import renderTableAval from './views/tableAvaliacoesView.js'
+import findClient from './helpers/findClientsHelper.js'
 
 export const app = () => {
   let con = new ClientesController()
   con.getClientByForm()
   renderSelect()
   renderTable()
-  
+  findClient()
   desableAllHTMLSections()
 
   $(document).ready(() => {
@@ -38,7 +39,6 @@ export const app = () => {
     renderTableAval()
     e.preventDefault()
   })
-
 
 }
 
